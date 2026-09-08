@@ -1,16 +1,22 @@
-name: "Understanding Runners in GitHub Actions"
+name: "Understanding Runners in GitHub Actions(Window and Linux)"
 on: push
 jobs:
-    runner-info-job:
+    linux-runner-info-job:
         runs-on: :ubuntu-latest
         steps:
-            - name: "Print Runner Details"
+            - name: "Print Linux Runner Details"
               run: |
                 echo "Runner Name: ${{ runner.name }}"
                 echo "Runner OS: ${{ runner.os }}"
                 echo "Runner Architecture: ${{ runner.arch }}"
                 echo "Runner Temporary Directory: ${{ runner.temp }}"
                 echo "Runner Workspace Directory: ${{ runner.workspace }}"
+    window-runner-info-job:
+        runs-on: :windows-latest
+        steps:
+            - name: "Print Window Runner Details"
+              shell: bash
+              run: |
                 echo "Runner Name: $RUNNER_NAME"
                 echo "Runner OS: $RUNNER_OS"
                 echo "Runner Architecture: $RUNNER_ARCH"
