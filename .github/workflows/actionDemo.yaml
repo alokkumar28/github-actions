@@ -1,22 +1,23 @@
 name: app demo workflow
+
 on: push
+
 jobs:
-    app-ci-job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v6
+  app-ci-job:
+    runs-on: ubuntu-latest
 
-            - name: Go to app Directory
-              run: cd app  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
 
-            - name: Build docker image
-              run: docker build -t myapp:v1.0.0 .
+      - name: Build Docker Image
+        working-directory: ./app
+        run: docker build -t myapp:v1.0.0 .
 
-            - name: Run the docker container
-              run: docker run -d -p 5000:5000 --name myapp-container myapp:v1.0.0
-             
-            - name: Smoke test
-              run: |
-                sleep 5
-                curl http://localhost:5000/health
+      - name: Run Docker Container
+        run: docker run -d -p 5000:5000 --name myapp-container myapp:v1.0.0
+
+      - name: Smoke Test
+        run: |
+          sleep 5
+          curl http://localhost:5000/health
