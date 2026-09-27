@@ -2,13 +2,13 @@ name: 01-Production Workflow Trigger Demo
 
 on:
   push:
-    branches:
-      - "main"
-      - "feature/*"
-    paths:
-      - "app/**"
-      - "docker/**"
-      - ".github/workflows/**"
+    # branches:
+    #   - "main"
+    #   - "feature/*"
+    # paths:
+    #   - "app/**"
+    #   - "docker/**"
+    #   - ".github/workflows/**"
 
   pull_request:
     types:
