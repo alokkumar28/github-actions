@@ -1,0 +1,24 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alokkumar28/github-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alokkumar28/github-actions/issues"
+  },
+  "homepage": "https://github.com/alokkumar28/github-actions#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
